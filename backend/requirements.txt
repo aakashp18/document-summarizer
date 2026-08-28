@@ -1,0 +1,9 @@
+Flask
+flask-cors
+python-dotenv
+PyMySQL
+PyJWT
+PyMuPDF
+python-docx
+google-genai
+gunicorn

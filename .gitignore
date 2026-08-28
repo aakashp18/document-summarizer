@@ -1,0 +1,13 @@
+# Virtual Environment
+venv/
+
+# Environment Variables
+backend/.env
+
+# Python Cache
+__pycache__/
+*.pyc
+
+# Uploaded Files
+backend/uploads/*
+!backend/uploads/.gitkeep

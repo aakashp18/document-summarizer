@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Document Summarizer</title>
+
+    <link rel="stylesheet" href="../css/app.css">
+</head>
+
+<body>
+
+    <div class="app-layout">
+
+        <!-- Open Sidebar -->
+        <button
+            type="button"
+            id="openSidebarBtn"
+            class="open-sidebar-btn"
+            aria-label="Open sidebar"
+        >
+            +
+        </button>
+
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="sidebar-header">
+
+                <div>
+                    <h2>Document Summarizer</h2>
+                    <p>Your AI summary assistant</p>
+                </div>
+
+                <button
+                    type="button"
+                    id="collapseSidebarBtn"
+                    class="collapse-sidebar-btn"
+                    aria-label="Collapse sidebar"
+                >
+                    −
+                </button>
+
+            </div>
+
+
+            <!-- Sidebar Actions -->
+            <div class="sidebar-actions">
+
+                <button
+                    type="button"
+                    class="account-btn"
+                    id="accountBtn"
+                >
+                    👤 Account
+                </button>
+
+                <button
+                    type="button"
+                    class="new-chat-btn"
+                    id="newChatBtn"
+                >
+                    + New Summary
+                </button>
+
+            </div>
+
+
+            <!-- Recent Summaries -->
+            <section class="recent-section">
+
+                <h3>Recent Summaries</h3>
+
+                <div id="recentSummaries">
+                    <p class="empty-history">
+                        No recent summaries
+                    </p>
+                </div>
+
+            </section>
+
+
+            <!-- Logout -->
+            <div
+                class="sidebar-bottom"
+                id="sidebarBottom"
+            >
+                <button
+                    type="button"
+                    class="sidebar-btn"
+                    id="logoutBtn"
+                >
+                    ↪ Logout
+                </button>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content">
+
+            <header class="top-bar">
+                <h1>What would you like to summarize?</h1>
+
+                <p>
+                    Enter text or upload a document or image.
+                </p>
+            </header>
+
+
+            <!-- Summarizer -->
+            <section class="summarizer-area">
+
+                <div class="input-box">
+
+                    <!-- Add Attachment -->
+                    <button
+                        type="button"
+                        class="plus-btn"
+                        id="plusBtn"
+                        aria-label="Add document or image"
+                    >
+                        +
+                    </button>
+
+
+                    <!-- Text -->
+                    <textarea
+                        id="textInput"
+                        placeholder="Paste or type your text here..."
+                    ></textarea>
+
+
+                    <!-- Selected Document -->
+                    <div
+                        id="selectedFile"
+                        class="selected-file hidden"
+                    >
+                        <span id="fileIcon">📄</span>
+
+                        <span id="fileName"></span>
+
+                        <button
+                            type="button"
+                            class="remove-file-btn"
+                            id="removeFileBtn"
+                            aria-label="Remove document"
+                        >
+                            ✕
+                        </button>
+                    </div>
+
+
+                    <!-- Selected Image -->
+                    <div
+                        id="imagePreviewContainer"
+                        class="selected-file hidden"
+                    >
+                        <img
+                            id="imagePreview"
+                            src=""
+                            alt="Selected image"
+                        >
+
+                        <span id="imageName"></span>
+
+                        <button
+                            type="button"
+                            class="remove-file-btn"
+                            id="removeImageBtn"
+                            aria-label="Remove image"
+                        >
+                            ✕
+                        </button>
+                    </div>
+
+                </div>
+
+
+                <!-- Attachment Menu -->
+                <div
+                    id="plusMenu"
+                    class="plus-menu hidden"
+                >
+                    <button
+                        type="button"
+                        class="menu-option"
+                        id="documentOption"
+                    >
+                        📄
+                        <span>Upload Document</span>
+                    </button>
+
+                    <button
+                        type="button"
+                        class="menu-option"
+                        id="imageOption"
+                    >
+                        🖼️
+                        <span>Upload Image</span>
+                    </button>
+                </div>
+
+
+                <!-- Hidden File Inputs -->
+                <input
+                    type="file"
+                    id="documentInput"
+                    accept=".pdf,.docx,.txt"
+                    hidden
+                >
+
+                <input
+                    type="file"
+                    id="imageInput"
+                    accept=".jpg,.jpeg,.png"
+                    hidden
+                >
+
+
+                <!-- Summarize -->
+                <button
+                    type="button"
+                    id="summarizeBtn"
+                    class="summarize-btn hidden"
+                >
+                    Generate Summary
+                </button>
+
+
+                <!-- Loading -->
+                <p
+                    id="loading"
+                    class="loading hidden"
+                >
+                    Processing your content...
+                </p>
+
+
+                <!-- Error -->
+                <p
+                    id="error"
+                    class="error hidden"
+                ></p>
+
+
+                <!-- Result -->
+                <section
+                    id="result"
+                    class="result hidden"
+                >
+                    <div class="result-header">
+
+                        <div>
+                            <h2>Summary</h2>
+                            <p>Your content summarized for quick reading.</p>
+                        </div>
+
+                        <button
+                            type="button"
+                            id="closeResultBtn"
+                            aria-label="Close summary"
+                        >
+                            ✕
+                        </button>
+
+                    </div>
+
+                    <div
+                        id="summaryText"
+                        class="summary-text"
+                    ></div>
+
+                </section>
+
+            </section>
+
+        </main>
+
+    </div>
+
+
+    <script src="../js/app.js"></script>
+
+</body>
+</html>
