@@ -2,7 +2,7 @@
 // API
 // ======================================================
 
-const API_URL = "http://127.0.0.1:5000";
+const API_URL = "";
 
 
 // ======================================================
@@ -838,8 +838,7 @@ if (accountBtn) {
             "click",
             function () {
 
-                window.location.href =
-                    "login.html";
+                window.location.href ="/pages/login.html";
 
             }
         );
