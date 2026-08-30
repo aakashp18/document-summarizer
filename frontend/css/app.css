@@ -902,3 +902,186 @@ body {
     }
 
 }
+
+
+
+
+
+/* ========================================
+   MOBILE ANDROID RESPONSIVE
+======================================== */
+
+@media (max-width: 600px) {
+
+    /* App layout */
+    .app-layout {
+        display: block;
+    }
+
+
+    /* Sidebar becomes overlay */
+    .sidebar {
+        position: fixed;
+
+        top: 0;
+        left: 0;
+
+        width: 250px;
+        min-width: 250px;
+
+        height: 100vh;
+
+        z-index: 999;
+
+        box-shadow: 4px 0 20px rgba(0, 0, 0, 0.12);
+    }
+
+
+    /* Hide sidebar when collapsed */
+    .app-layout.sidebar-collapsed .sidebar {
+        width: 0;
+        min-width: 0;
+    }
+
+
+    /* Main content uses full screen */
+    .main-content {
+        width: 100%;
+
+        padding: 20px 14px;
+
+        min-height: 100vh;
+    }
+
+
+    /* Heading */
+    .top-bar h1 {
+        font-size: 23px;
+    }
+
+    .top-bar p {
+        font-size: 13px;
+
+        line-height: 20px;
+    }
+
+
+    /* Reduce empty space */
+    .summarizer-area {
+        margin-top: 45px;
+    }
+
+
+    /* Input area */
+    .input-box {
+        min-height: 150px;
+
+        padding:
+            18px
+            14px
+            18px
+            55px;
+
+        border-radius: 14px;
+    }
+
+
+    .input-box textarea {
+        height: 110px;
+
+        font-size: 16px;
+
+        line-height: 23px;
+    }
+
+
+    /* Plus button */
+    .plus-btn {
+        top: 17px;
+        left: 13px;
+
+        width: 34px;
+        height: 34px;
+
+        font-size: 21px;
+    }
+
+
+    /* Attachment menu */
+    .plus-menu {
+        top: 150px;
+
+        left: 0;
+
+        width: 200px;
+
+        z-index: 1000;
+    }
+
+
+    /* Selected file */
+    .selected-file {
+        width: 100%;
+        max-width: 100%;
+    }
+
+
+    #fileName,
+    #imageName {
+        max-width: 200px;
+    }
+
+
+    /* Generate button - easier to tap */
+    .summarize-btn {
+        width: 100%;
+
+        min-height: 48px;
+
+        margin-top: 18px;
+
+        font-size: 15px;
+    }
+
+
+    /* Summary result */
+    .result {
+        margin-top: 25px;
+
+        padding: 17px;
+
+        border-radius: 14px;
+    }
+
+
+    .result-header {
+        gap: 10px;
+    }
+
+
+    .result-header h2 {
+        font-size: 19px;
+    }
+
+
+    .summary-text {
+        font-size: 15px;
+
+        line-height: 24px;
+
+        overflow-wrap: anywhere;
+    }
+
+
+    /* Open sidebar button */
+    .open-sidebar-btn {
+        top: 10px;
+        left: 10px;
+
+        width: 42px;
+        height: 42px;
+
+        font-size: 23px;
+    }
+
+}
