@@ -1085,3 +1085,296 @@ body {
     }
 
 }
+
+
+
+/* ========================================
+   CUSTOM MODALS
+======================================== */
+
+.modal {
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(20, 30, 25, 0.35);
+
+    z-index: 5000;
+}
+
+
+/* ========================================
+   MODAL BOX
+======================================== */
+
+.modal-box {
+    position: relative;
+
+    width: 100%;
+    max-width: 360px;
+
+    padding: 28px 25px;
+
+    background: #ffffff;
+
+    border-radius: 18px;
+
+    box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.18);
+
+    animation: modalOpen 0.2s ease;
+}
+
+
+/* ========================================
+   MODAL ANIMATION
+======================================== */
+
+@keyframes modalOpen {
+
+    from {
+        opacity: 0;
+        transform: scale(0.95) translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+}
+
+
+/* ========================================
+   MODAL ICON
+======================================== */
+
+.modal-icon {
+    width: 52px;
+    height: 52px;
+
+    margin: 0 auto 15px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: #eaf5ee;
+
+    border-radius: 50%;
+
+    font-size: 24px;
+}
+
+
+/* ========================================
+   MODAL TITLE
+======================================== */
+
+.modal-box h2 {
+    margin: 0 0 22px;
+
+    text-align: center;
+
+    color: #1f2933;
+
+    font-size: 20px;
+}
+
+
+/* ========================================
+   CLOSE BUTTON
+======================================== */
+
+.modal-close {
+    position: absolute;
+
+    top: 12px;
+    right: 14px;
+
+    width: 32px;
+    height: 32px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    color: #6b7280;
+
+    font-size: 25px;
+
+    line-height: 30px;
+
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    background: #f1f5f3;
+}
+
+
+/* ========================================
+   ACCOUNT INFORMATION
+======================================== */
+
+.account-info {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 14px;
+}
+
+
+.account-row {
+    padding: 13px 14px;
+
+    background: #f6faf7;
+
+    border: 1px solid #e1ebe4;
+
+    border-radius: 10px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 5px;
+}
+
+
+.account-label {
+    color: #7a857f;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    text-transform: uppercase;
+}
+
+
+.account-value {
+    color: #26332a;
+
+    font-size: 15px;
+
+    overflow-wrap: anywhere;
+}
+
+
+/* ========================================
+   LOGOUT MODAL
+======================================== */
+
+.logout-modal-box {
+    max-width: 340px;
+
+    text-align: center;
+}
+
+
+.logout-modal-box h2 {
+    margin-bottom: 8px;
+}
+
+
+.modal-message {
+    margin: 0 0 25px;
+
+    color: #6b7280;
+
+    font-size: 14px;
+
+    line-height: 21px;
+}
+
+
+/* ========================================
+   MODAL BUTTONS
+======================================== */
+
+.modal-actions {
+    display: flex;
+
+    gap: 10px;
+}
+
+
+.modal-actions button {
+    flex: 1;
+
+    min-height: 44px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+/* NO BUTTON */
+
+.modal-cancel-btn {
+    background: #ffffff;
+
+    color: #374151;
+
+    border: 1px solid #dfe7e2;
+}
+
+.modal-cancel-btn:hover {
+    background: #f5f8f6;
+}
+
+
+/* YES BUTTON */
+
+.modal-confirm-btn {
+    background: #b42318;
+
+    color: #ffffff;
+
+    border: none;
+}
+
+.modal-confirm-btn:hover {
+    background: #8f1c13;
+}
+
+
+/* ========================================
+   MOBILE
+======================================== */
+
+@media (max-width: 550px) {
+
+    .modal {
+        padding: 18px;
+    }
+
+
+    .modal-box {
+        max-width: 100%;
+
+        padding: 25px 20px;
+    }
+
+}

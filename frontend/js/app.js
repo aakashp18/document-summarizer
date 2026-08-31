@@ -815,6 +815,19 @@ function clearInput() {
 // ACCOUNT / SIGN IN
 // ======================================================
 
+const accountModal =
+    document.getElementById("accountModal");
+
+const closeAccountModal =
+    document.getElementById("closeAccountModal");
+
+const modalUsername =
+    document.getElementById("modalUsername");
+
+const modalEmail =
+    document.getElementById("modalEmail");
+
+
 if (accountBtn) {
 
     const token =
@@ -824,9 +837,9 @@ if (accountBtn) {
         localStorage.getItem("user");
 
 
-    // --------------------------------------
+    // ======================================
     // GUEST USER
-    // --------------------------------------
+    // ======================================
 
     if (!token || !userData) {
 
@@ -838,7 +851,8 @@ if (accountBtn) {
             "click",
             function () {
 
-                window.location.href ="/pages/login.html";
+                window.location.href =
+                    "login.html";
 
             }
         );
@@ -846,9 +860,9 @@ if (accountBtn) {
     }
 
 
-    // --------------------------------------
+    // ======================================
     // LOGGED-IN USER
-    // --------------------------------------
+    // ======================================
 
     else {
 
@@ -866,13 +880,25 @@ if (accountBtn) {
                         JSON.parse(userData);
 
 
-                    alert(
-                        "Account Information\n\n" +
-                        "Username: " +
-                        (user.username || "Not available") +
-                        "\nEmail: " +
-                        (user.email || "Not available")
+                    // Put user information
+                    // inside the popup
+
+                    modalUsername.textContent =
+                        user.username ||
+                        "Not available";
+
+
+                    modalEmail.textContent =
+                        user.email ||
+                        "Not available";
+
+
+                    // Open popup
+
+                    accountModal.classList.remove(
+                        "hidden"
                     );
+
 
                 } catch (err) {
 
@@ -892,6 +918,26 @@ if (accountBtn) {
 }
 
 
+// ======================================
+// CLOSE ACCOUNT POPUP
+// ======================================
+
+if (closeAccountModal) {
+
+    closeAccountModal.addEventListener(
+        "click",
+        function () {
+
+            accountModal.classList.add(
+                "hidden"
+            );
+
+        }
+    );
+
+}
+
+
 // ======================================================
 // LOGOUT
 // ======================================================
@@ -901,6 +947,16 @@ const sidebarBottom =
 
 const logoutBtn =
     document.getElementById("logoutBtn");
+
+const logoutModal =
+    document.getElementById("logoutModal");
+
+const cancelLogoutBtn =
+    document.getElementById("cancelLogoutBtn");
+
+const confirmLogoutBtn =
+    document.getElementById("confirmLogoutBtn");
+
 
 const token =
     localStorage.getItem("token");
@@ -912,31 +968,81 @@ const userData =
 if (!token || !userData) {
 
     if (sidebarBottom) {
+
         sidebarBottom.remove();
+
     }
 
 } else {
 
-    logoutBtn.addEventListener("click", function () {
+    // ======================================
+    // OPEN LOGOUT POPUP
+    // ======================================
 
-        const confirmLogout =
-            confirm(
-                "Are you sure you want to logout?"
-            );
+    if (logoutBtn) {
 
-        if (!confirmLogout) {
-            return;
-        }
+        logoutBtn.addEventListener(
+            "click",
+            function () {
 
-        localStorage.removeItem("token");
-        localStorage.removeItem("user");
+                logoutModal.classList.remove(
+                    "hidden"
+                );
 
-        window.location.href = "login.html";
+            }
+        );
 
-    });
+    }
+
+
+    // ======================================
+    // NO - CLOSE POPUP
+    // ======================================
+
+    if (cancelLogoutBtn) {
+
+        cancelLogoutBtn.addEventListener(
+            "click",
+            function () {
+
+                logoutModal.classList.add(
+                    "hidden"
+                );
+
+            }
+        );
+
+    }
+
+
+    // ======================================
+    // YES - LOGOUT
+    // ======================================
+
+    if (confirmLogoutBtn) {
+
+        confirmLogoutBtn.addEventListener(
+            "click",
+            function () {
+
+                localStorage.removeItem(
+                    "token"
+                );
+
+                localStorage.removeItem(
+                    "user"
+                );
+
+
+                window.location.href =
+                    "login.html";
+
+            }
+        );
+
+    }
 
 }
-
 
 // ======================================================
 // CHECK LOGIN STATUS
