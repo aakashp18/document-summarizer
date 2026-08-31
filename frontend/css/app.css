@@ -11,9 +11,9 @@ html,
 body {
     margin: 0;
     padding: 0;
-
     width: 100%;
-    min-height: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 body {
@@ -30,11 +30,9 @@ body {
 
 .app-layout {
     display: flex;
-
     width: 100%;
-    min-height: 100vh;
-
-    align-items: stretch;
+    height: 100vh;
+    overflow: hidden;
 }
 
 
@@ -43,26 +41,23 @@ body {
    ========================================================= */
 
 .sidebar {
-    width: 280px;
-    min-width: 280px;
+    position: relative;
 
+    width: 250px;
+    min-width: 250px;
     height: 100vh;
 
-    padding: 28px 18px;
+    padding: 20px 14px;
 
-    background: #0b2035;
-
-    border-right: 1px solid #1d3a52;
+    background: #ffffff;
+    border-right: 1px solid #dfe7e2;
 
     display: flex;
     flex-direction: column;
 
-    position: relative;
+    overflow: hidden;
 
-    transition:
-        width 0.3s ease,
-        min-width 0.3s ease,
-        padding 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 
@@ -349,7 +344,7 @@ body {
     flex: 1;
 
     min-width: 0;
-    min-height: 100vh;
+    height: 100vh;
 
     padding: 45px 40px;
 
@@ -358,10 +353,11 @@ body {
     background: #071827;
 
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
+
+    overflow-y: auto;
+    overflow-x: hidden;
 }
 
 
@@ -600,7 +596,7 @@ input[type="file"][hidden] {
    ========================================================= */
 
 .result {
-    width: 700px;
+    width: 800px;
     max-width: 100%;
 
     margin-top: 30px;
